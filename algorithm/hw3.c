@@ -18,14 +18,14 @@ typedef struct Stack {
 }Stack;
 
 Head* createLinkedList() {
-	Head* H = (Head*)malloc(sizeof(Head));//Çìµå ¸Ş¸ğ¸® ÇÒ´ç
-	H->head = NULL;//Çìµå ÃÊ±âÈ­
+	Head* H = (Head*)malloc(sizeof(Head));//í—¤ë“œ ë©”ëª¨ë¦¬ í• ë‹¹
+	H->head = NULL;//í—¤ë“œ ì´ˆê¸°í™”
 	return H;
 }
 
 Stack* createStack() {
-	Stack* S = (Stack*)malloc(sizeof(Stack));//½ºÅÃ ¸Ş¸ğ¸® ÇÒ´ç
-	S->top = NULL;//½ºÅÃ ÃÊ±âÈ­
+	Stack* S = (Stack*)malloc(sizeof(Stack));//ìŠ¤íƒ ë©”ëª¨ë¦¬ í• ë‹¹
+	S->top = NULL;//ìŠ¤íƒ ì´ˆê¸°í™”
 	return S;
 }
 
@@ -33,14 +33,14 @@ void push(Head* H, Stack* S, char date) {
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	Node* p;
 	newNode->date = date;
-	newNode->link = NULL;//´ÙÀ½ÁÖ¼Ò ÃÊ±âÈ­
+	newNode->link = NULL;//ë‹¤ìŒì£¼ì†Œ ì´ˆê¸°í™”
 
-	if (H->head == NULL) {//Ã¹ ³ëµå°¡ ¾øÀ»¶§
+	if (H->head == NULL) {//ì²« ë…¸ë“œê°€ ì—†ì„ë•Œ
 		H->head = newNode;
 		S->top = newNode;
 		return;
 	}
-	else {//Ã¹ ³ëµå°¡ ÀÖÀ»¶§
+	else {//ì²« ë…¸ë“œê°€ ìˆì„ë•Œ
 		p = H->head;
 		for (;; p = p->link) {
 			if (p->link == NULL) break;
@@ -50,12 +50,12 @@ void push(Head* H, Stack* S, char date) {
 	p->link = newNode;
 	S->top = newNode;
 	return;
-}// ½ºÅÃ push ¿¬»ê
+}// ìŠ¤íƒ push ì—°ì‚°
 
 void pop(Head* H, Stack* S) {
 	Node* p;
 	Node* n;
-	if (S->top == NULL) return;//½ºÅÃ¿¡ µ¥ÀÌÅÍ°¡ ¾øÀ» ¶§
+	if (S->top == NULL) return;//ìŠ¤íƒì— ë°ì´í„°ê°€ ì—†ì„ ë•Œ
 	if (H->head->link == NULL) {
 		tmp = S->top->date;
 		if (tmp != '(') {
@@ -65,7 +65,7 @@ void pop(Head* H, Stack* S) {
 		H->head = NULL;
 		S->top = NULL;
 		return;
-	}// ½ºÅÃ¿¡ µ¥ÀÌÅÍ°¡ ÇÏ³ª ÀÖÀ» ¶§
+	}// ìŠ¤íƒì— ë°ì´í„°ê°€ í•˜ë‚˜ ìˆì„ ë•Œ
 	else {
 		p = H->head->link;
 		n = H->head;
@@ -84,7 +84,7 @@ void pop(Head* H, Stack* S) {
 		}
 		return;
 	}
-}//½ºÅÃ pop ¿¬»ê
+}//ìŠ¤íƒ pop ì—°ì‚°
 
 int main() {
 	in = fopen("hw3.inp", "rt");
@@ -92,11 +92,11 @@ int main() {
 	int i, cnt = 0, flag = 0;
 	char c, test;
 	Head *H; Stack *S;
-	H = createLinkedList();//Çìµå ÃÊ±âÈ­
-	S = createStack();//½ºÅÃ ÃÊ±âÈ­
+	H = createLinkedList();//í—¤ë“œ ì´ˆê¸°í™”
+	S = createStack();//ìŠ¤íƒ ì´ˆê¸°í™”
 
 	for (;;) {
-		if (flag == 2)break;//µÎ¹ø µ¹¸é ºüÁ®³ª¿È
+		if (flag == 2)break;//ë‘ë²ˆ ëŒë©´ ë¹ ì ¸ë‚˜ì˜´
 		fscanf(in, "%c", &c);
 		if (c == '\n') {
 			for (;;) {

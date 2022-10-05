@@ -32,7 +32,7 @@ void value2(int n, int m) {
 void FCFS(int s) {
 	int i, result;
 	for (;;) {
-		for (i = 0;; i++) {//´ë±âÅ¥¿¡ ³Ö±â
+		for (i = 0;; i++) {//ëŒ€ê¸°íì— ë„£ê¸°
 			if (disk[i].request == -1) {
 				end = i - 1;
 				break;
@@ -45,10 +45,10 @@ void FCFS(int s) {
 			}
 		}
 		for (i = 0; i < 100; i++) {
-			if (Q[i].index == 1)break;//´ë±âÅ¥¿¡ ÀÖÀ»¶§
+			if (Q[i].index == 1)break;//ëŒ€ê¸°íì— ìˆì„ë•Œ
 			if (i == end + 1)break;
 		}
-		if (i == end + 1)break;;//´ë±âÅ¥¿¡ ¾øÀ»¶§
+		if (i == end + 1)break;;//ëŒ€ê¸°íì— ì—†ì„ë•Œ
 		Q[i].index = 0;
 		value(head, Q[i].number);
 		result = tmp + s;
@@ -61,7 +61,7 @@ void FCFS(int s) {
 void SSTF(int s) {
 	int i, k, result, n = 0;
 	for (;;) {
-		for (i = 0;; i++) {//´ë±âÅ¥¿¡ ³Ö±â
+		for (i = 0;; i++) {//ëŒ€ê¸°íì— ë„£ê¸°
 			if (disk[i].request == -1) {
 				end = i - 1;
 				break;
@@ -91,10 +91,10 @@ void SSTF(int s) {
 						k = i;
 					}
 				}
-			};//´ë±âÅ¥¿¡ ÀÖÀ»¶§
+			};//ëŒ€ê¸°íì— ìˆì„ë•Œ
 			if (i == end)break;
 		}
-		if (n == 0)break;;//´ë±âÅ¥¿¡ ¾øÀ»¶§
+		if (n == 0)break;;//ëŒ€ê¸°íì— ì—†ì„ë•Œ
 		Q[k].index = 0;
 		value(head, Q[k].number);
 		result = tmp + s;
@@ -108,7 +108,7 @@ void SSTF(int s) {
 void LOOK(int s) {
 	int i, k, result, n = 0,m=0;
 	for (;;) {
-		for (i = 0;; i++) {//´ë±âÅ¥¿¡ ³Ö±â
+		for (i = 0;; i++) {//ëŒ€ê¸°íì— ë„£ê¸°
 			if (disk[i].request == -1) {
 				end = i - 1;
 				break;
@@ -134,7 +134,7 @@ void LOOK(int s) {
 					break;
 				}
 			}
-			if (n == 0&&m==2)break;;//´ë±âÅ¥¿¡ ¾øÀ»¶§
+			if (n == 0&&m==2)break;;//ëŒ€ê¸°íì— ì—†ì„ë•Œ
 			if (flag == 1)continue;
 			for (i = 0; i < 100; i++) {
 				if (Q[i].index == 1 && head <= Q[i].number) {
@@ -145,7 +145,7 @@ void LOOK(int s) {
 							k = i;
 						}
 					}
-				};//´ë±âÅ¥¿¡ ÀÖÀ»¶§
+				};//ëŒ€ê¸°íì— ìˆì„ë•Œ
 				if (i == end)break;
 			}
 		}
@@ -163,7 +163,7 @@ void LOOK(int s) {
 					break;
 				}
 			}
-			if (n == 0&&m==2)break;;//´ë±âÅ¥¿¡ ¾øÀ»¶§
+			if (n == 0&&m==2)break;;//ëŒ€ê¸°íì— ì—†ì„ë•Œ
 			if (flag == 0)continue;
 			for (i = 0; i < 100; i++) {
 				if (Q[i].index == 1 && head >= Q[i].number) {
@@ -174,11 +174,11 @@ void LOOK(int s) {
 							k = i;
 						}
 					}
-				};//´ë±âÅ¥¿¡ ÀÖÀ»¶§
+				};//ëŒ€ê¸°íì— ìˆì„ë•Œ
 				if (i == end)break;
 			}
 		}
-		if (n == 0)break;;//´ë±âÅ¥¿¡ ¾øÀ»¶§
+		if (n == 0)break;;//ëŒ€ê¸°íì— ì—†ì„ë•Œ
 		Q[k].index = 0;
 		value(head, Q[k].number);
 		result = tmp + s;

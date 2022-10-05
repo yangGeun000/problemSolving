@@ -2,8 +2,8 @@
 #include<stdlib.h>
 
 typedef struct Node {
-	int coef;//°è¼ö
-	int expo;//Áö¼ö
+	int coef;//ê³„ìˆ˜
+	int expo;//ì§€ìˆ˜
 	struct Node* link;
 }Node;
 typedef struct Head {
@@ -11,8 +11,8 @@ typedef struct Head {
 }Head;
 
 Head* createLinkedList() {
-	Head* H = (Head*)malloc(sizeof(Head));//Çìµå ¸Þ¸ð¸® ÇÒ´ç
-	H->head = NULL;//Çìµå ÃÊ±âÈ­
+	Head* H = (Head*)malloc(sizeof(Head));//í—¤ë“œ ë©”ëª¨ë¦¬ í• ë‹¹
+	H->head = NULL;//í—¤ë“œ ì´ˆê¸°í™”
 	return H;
 }
 
@@ -21,13 +21,13 @@ void insertNode(Head* H, int coef, int expo) {
 	Node* p;
 	newNode->coef = coef;
 	newNode->expo = expo;
-	newNode->link = NULL;//´ÙÀ½ÁÖ¼Ò ÃÊ±âÈ­
+	newNode->link = NULL;//ë‹¤ìŒì£¼ì†Œ ì´ˆê¸°í™”
 
-	if (H->head == NULL) {//Ã¹ ³ëµå°¡ ¾øÀ»¶§
+	if (H->head == NULL) {//ì²« ë…¸ë“œê°€ ì—†ì„ë•Œ
 		H->head = newNode;
 		return;
 	}
-	else {//Ã¹ ³ëµå°¡ ÀÖÀ»¶§
+	else {//ì²« ë…¸ë“œê°€ ìžˆì„ë•Œ
 		p = H->head;
 		for (;;) {
 			if (p->link == NULL) break;
@@ -36,7 +36,7 @@ void insertNode(Head* H, int coef, int expo) {
 	}
 	p->link = newNode;
 	return;
-}// »õ ³ëµå»ðÀÔ ¿¬»ê
+}// ìƒˆ ë…¸ë“œì‚½ìž… ì—°ì‚°
 
 void removeNode(Head* H, int del) {
 	Node* p;
@@ -70,7 +70,7 @@ void removeNode(Head* H, int del) {
 		}
 		return;
 	}
-}//»èÁ¦ ¿¬»ê
+}//ì‚­ì œ ì—°ì‚°
 
 int main() {
 	FILE *inp, *out;
@@ -88,15 +88,15 @@ int main() {
 		fscanf(inp, "%d%c%d%c", &coef, &bsp, &expo, &bsp);
 		insertNode(A, coef, expo);
 		if (bsp != ' ')break;
-	}//Ã³À½ ¸®½ºÆ® ÀÔ·Â°ª 
+	}//ì²˜ìŒ ë¦¬ìŠ¤íŠ¸ ìž…ë ¥ê°’ 
 	for (;;) {
 		fscanf(inp, "%d%c%d%c", &coef, &bsp, &expo, &bsp);
 		insertNode(B, coef, expo);
 		if (bsp != ' ')break;
-	}//µÎ¹øÂ° ¸®½ºÆ® ÀÔ·Â°ª
-	fscanf(inp, "%d", &del);//»èÁ¦ Áö¼ö°ª
-	removeNode(A, del);//»èÁ¦
-	removeNode(B, del);//»èÁ¦
+	}//ë‘ë²ˆì§¸ ë¦¬ìŠ¤íŠ¸ ìž…ë ¥ê°’
+	fscanf(inp, "%d", &del);//ì‚­ì œ ì§€ìˆ˜ê°’
+	removeNode(A, del);//ì‚­ì œ
+	removeNode(B, del);//ì‚­ì œ
 	Node* a = A->head;
 	Node* b = B->head;
 	for (; a; a = a->link) {
@@ -106,7 +106,7 @@ int main() {
 			insertNode(C, coef, expo);
 		}
 		b = B->head;
-	}//´ÙÇ×½Ä ´Ü¼ø°ö°è»ê
+	}//ë‹¤í•­ì‹ ë‹¨ìˆœê³±ê³„ì‚°
 	Node* c = C->head;
 	if (C->head != NULL) {
 		for (i = c->expo; i >= 0; i--) {
@@ -119,7 +119,7 @@ int main() {
 			}
 			if (tmp != 0)insertNode(D, tmp, tmp2);
 			c = C->head;
-		}//°ö°è»ê Á¤¸®¿¬»ê
+		}//ê³±ê³„ì‚° ì •ë¦¬ì—°ì‚°
 		Node* k;
 		k = D->head;
 		for (; k; k = k->link) {

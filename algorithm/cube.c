@@ -42,7 +42,7 @@ int main() {
 		if (string[0] == string[0] && string[1] == string[8] && string[2] == string[10] && string[3] == string[7] && string[4] == string[9] && string[5] == string[11]) {
 			fprintf(out, "TRUE\n");
 			continue;
-		}//√π¡Ÿ
+		}//Ï≤´Ï§Ñ
 		if (string[0] == string[11] && string[1] == string[7] && string[2] == string[9] && string[3] == string[8] && string[4] == string[10] && string[5] == string[6]) {
 			fprintf(out, "TRUE\n");
 			continue;
@@ -58,7 +58,7 @@ int main() {
 		if (string[0] == string[11] && string[1] == string[8] && string[2] == string[7] && string[3] == string[10] && string[4] == string[9] && string[5] == string[6]) {
 			fprintf(out, "TRUE\n");
 			continue;
-		}//µŒ¡Ÿ
+		}//ÎëêÏ§Ñ
 		if (string[0] == string[10] && string[1] == string[6] && string[2] == string[8] && string[3] == string[9] && string[4] == string[11] && string[5] == string[7]) {
 			fprintf(out, "TRUE\n");
 			continue;
@@ -74,7 +74,7 @@ int main() {
 		if (string[0] == string[9] && string[1] == string[6] && string[2] == string[10] && string[3] == string[7] && string[4] == string[11] && string[5] == string[8]) {
 			fprintf(out, "TRUE\n");
 			continue;
-		}//ºº¡Ÿ
+		}//ÏÑ∏Ï§Ñ
 		if (string[0] == string[7] && string[1] == string[11] && string[2] == string[8] && string[3] == string[9] && string[4] == string[6] && string[5] == string[10]) {
 			fprintf(out, "TRUE\n");
 			continue;
@@ -90,7 +90,7 @@ int main() {
 		if (string[0] == string[8] && string[1] == string[11] && string[2] == string[10] && string[3] == string[7] && string[4] == string[6] && string[5] == string[9]) {
 			fprintf(out, "TRUE\n");
 			continue;
-		}//≥◊¡Ÿ
+		}//ÎÑ§Ï§Ñ
 		if (string[0] == string[9] && string[1] == string[7] && string[2] == string[6] && string[3] == string[11] && string[4] == string[10] && string[5] == string[8]) {
 			fprintf(out, "TRUE\n");
 			continue;
@@ -106,7 +106,7 @@ int main() {
 		if (string[0] == string[7] && string[1] == string[8] && string[2] == string[6] && string[3] == string[11] && string[4] == string[9] && string[5] == string[10]) {
 			fprintf(out, "TRUE\n");
 			continue;
-		}//¥Ÿº∏¡Ÿ
+		}//Îã§ÏÑØÏ§Ñ
 		if (string[0] == string[8] && string[1] == string[7] && string[2] == string[11] && string[3] == string[6] && string[4] == string[10] && string[5] == string[9]) {
 			fprintf(out, "TRUE\n");
 			continue;
@@ -124,7 +124,7 @@ int main() {
 			continue;
 		}
 		fprintf(out, "FALSE\n");
-	}//ø©º∏¡Ÿ
+	}//Ïó¨ÏÑØÏ§Ñ
 
 	fclose(in);
 	fclose(out);

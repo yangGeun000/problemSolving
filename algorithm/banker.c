@@ -15,25 +15,25 @@ int main() {
 		for (j = 0; j < m + 1; j++) {
 			queue[i][j] = 0;
 		}
-	}//´ë±âÀå¼Ò ÃÊ±âÈ­
+	}//ëŒ€ê¸°ìž¥ì†Œ ì´ˆê¸°í™”
 	for (i = 0; i < m; i++) {
 		fscanf(inp, "%d", &rmax[i]);
-	}//ÀÚ¿ø ÃÖ´ë·® ÀÔ·Â
+	}//ìžì› ìµœëŒ€ëŸ‰ ìž…ë ¥
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
 			fscanf(inp, "%d", &max[i][j]);
 		}
-	}//max°ª ÀÔ·Â
+	}//maxê°’ ìž…ë ¥
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
 			fscanf(inp, "%d", &available[i][j]);
 		}
-	}//available°ª ÀÔ·Â
+	}//availableê°’ ìž…ë ¥
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < m; j++) {
 			need[i][j] = max[i][j] - available[i][j];
 		}
-	}//need°ª ÀÔ·Â
+	}//needê°’ ìž…ë ¥
 	for (i = 0; i < m; i++) {
 		ravailable[i] = 0;
 	}
@@ -42,7 +42,7 @@ int main() {
 			ravailable[i] += available[j][i];
 		}
 		ravailable[i] = rmax[i] - ravailable[i];
-	}//³²Àº ÀÚ¿ø·® ÀÔ·Â
+	}//ë‚¨ì€ ìžì›ëŸ‰ ìž…ë ¥
 
 	fscanf(inp, "%c", &tmp2); fscanf(inp, "%c", &tmp2); fscanf(inp, "%c", &tmp2);
 	for (;;) {
@@ -143,7 +143,7 @@ int main() {
 				available[re[0]][i] -= re[i + 1];
 				need[re[0]][i] += re[i + 1];
 				ravailable[i] += re[i + 1];
-			}//¸±¸®Áî °ª ÇÒ´ç
+			}//ë¦´ë¦¬ì¦ˆ ê°’ í• ë‹¹
 
 			for (j = 0; j < cnt; j++) {
 				cnt = 0;
@@ -152,7 +152,7 @@ int main() {
 				}
 				if (cnt == m) {
 					flag = 0;
-					for (i = 0; i < m; i++) { // ÀÏ´Ü ÇÒ´ç
+					for (i = 0; i < m; i++) { // ì¼ë‹¨ í• ë‹¹
 						available[queue[j][0]][i] += queue[j][i + 1];
 						need[queue[j][0]][i] -= queue[j][i + 1];
 						ravailable[i] -= queue[j][i + 1];
@@ -162,7 +162,7 @@ int main() {
 					}
 					if (flag != 1) {
 
-						// unSafe ÀÎÁö ÆÇ´ÜÇÏ±â
+						// unSafe ì¸ì§€ íŒë‹¨í•˜ê¸°
 						cntN = 0;
 						for (i = 0; i < n; i++) {
 							cnt = 0;

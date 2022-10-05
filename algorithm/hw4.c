@@ -17,7 +17,7 @@ void insertheap(int input) {
 		heap[i] = tmp;
 		i /= 2;
 	}
-}//ÃÖ´ëÈü ÀÔ·Â
+}//ìµœëŒ€í™ ì…ë ¥
 
 void removeheap() {
 	int i, tmp;
@@ -46,7 +46,7 @@ void removeheap() {
 		}
 		//if (heap[i] > heap[i * 2] && heap[i] > heap[i * 2 + 1])break;
 	}
-}//ÃÖ´ëÈü Ãâ·Â
+}//ìµœëŒ€í™ ì¶œë ¥
 
 void mid(int num) {
 	if (heap[num] != NULL) {
@@ -54,7 +54,7 @@ void mid(int num) {
 		fprintf(out, "%d ", heap[num]);
 		mid(num * 2 + 1);
 	}
-}//ÁßÀ§¼øÈ¸
+}//ì¤‘ìœ„ìˆœíšŒ
 
 typedef struct Node {
 	int date;
@@ -67,8 +67,8 @@ typedef struct Head {
 }Head;
 
 Head* createLinkedList() {
-	Head* H = (Head*)malloc(sizeof(Head));//Çìµå ¸Ş¸ğ¸® ÇÒ´ç
-	H->head = NULL;//Çìµå ÃÊ±âÈ­
+	Head* H = (Head*)malloc(sizeof(Head));//í—¤ë“œ ë©”ëª¨ë¦¬ í• ë‹¹
+	H->head = NULL;//í—¤ë“œ ì´ˆê¸°í™”
 	return H;
 }
 
@@ -76,14 +76,14 @@ void insertNode(Head* H, int input) {
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	Node* p;
 	newNode->date = input;
-	newNode->Llink = NULL;//¿ŞÂÊÁÖ¼ÒÃÊ±âÈ­
-	newNode->Rlink = NULL;//¿À¸¥ÂÊÁÖ¼ÒÃÊ±âÈ­
+	newNode->Llink = NULL;//ì™¼ìª½ì£¼ì†Œì´ˆê¸°í™”
+	newNode->Rlink = NULL;//ì˜¤ë¥¸ìª½ì£¼ì†Œì´ˆê¸°í™”
 
-	if (H->head == NULL) {//Ã¹ ³ëµå°¡ ¾øÀ»¶§
+	if (H->head == NULL) {//ì²« ë…¸ë“œê°€ ì—†ì„ë•Œ
 		H->head = newNode;
 		return;
 	}
-	else {//Ã¹ ³ëµå°¡ ÀÖÀ»¶§
+	else {//ì²« ë…¸ë“œê°€ ìˆì„ë•Œ
 		p = H->head;
 		for (;;) {
 			if (p->date > input) {
@@ -102,7 +102,7 @@ void insertNode(Head* H, int input) {
 			}
 		}
 	}
-}// »õ ³ëµå»ğÀÔ ¿¬»ê
+}// ìƒˆ ë…¸ë“œì‚½ì… ì—°ì‚°
 
 void treemid(Node* p) {
 	if (p->Llink != NULL) {
@@ -112,7 +112,7 @@ void treemid(Node* p) {
 	if (p->Rlink != NULL) {
 		treemid(p->Rlink);
 	}
-}// ÀÌÁøÆ®¸® ÁßÈ¸¼øÀ§Ãâ·Â
+}// ì´ì§„íŠ¸ë¦¬ ì¤‘íšŒìˆœìœ„ì¶œë ¥
 
 void removeNode(Head* H, int input) {
 	Node *n, *m, *p, *q, *r, *s;
@@ -137,7 +137,7 @@ void removeNode(Head* H, int input) {
 			flag = 1;
 			if (n == NULL)return;
 		}
-	}//»èÁ¦ÇÒ·Á´Â ³ëµåÃ£±â
+	}//ì‚­ì œí• ë ¤ëŠ” ë…¸ë“œì°¾ê¸°
 	if (n->Llink == NULL && n->Rlink == NULL) {
 		if (flag == 0) {
 			m->Llink = NULL;
@@ -152,7 +152,7 @@ void removeNode(Head* H, int input) {
 			free(n);
 		}
 		return;
-	}//ÀÚ½ÄÀÌ ¾øÀ»¶§
+	}//ìì‹ì´ ì—†ì„ë•Œ
 	if (n->Llink != NULL && n->Rlink != NULL) {
 		p = n->Llink; q = n;
 		for (;;) {
@@ -172,7 +172,7 @@ void removeNode(Head* H, int input) {
 			s = r;
 			r = r->Llink;
 		}
-		/*if (n->Llink->Rlink == NULL || n->Rlink->Llink == NULL) {//ÀÚ½ÄÀÌ µÑÀÌ
+		/*if (n->Llink->Rlink == NULL || n->Rlink->Llink == NULL) {//ìì‹ì´ ë‘˜ì´
 			if (flag == 0) {
 				if (a <= b) {
 					m->Llink = p; p->Rlink = n->Rlink;
@@ -282,7 +282,7 @@ void removeNode(Head* H, int input) {
 			}
 			return;
 		}
-	}//ÀÚ½ÄÀÌ µÑ´Ù ÀÖÀ»¶§
+	}//ìì‹ì´ ë‘˜ë‹¤ ìˆì„ë•Œ
 	if (n->Llink != NULL) {
 		if (flag == 0) {
 			m->Llink = n->Llink;
@@ -297,7 +297,7 @@ void removeNode(Head* H, int input) {
 			free(n);
 		}
 		return;
-	}//¿ŞÂÊ ÀÚ½Ä¸¸ ÀÖÀ» ¶§
+	}//ì™¼ìª½ ìì‹ë§Œ ìˆì„ ë•Œ
 	if (n->Rlink != NULL) {
 		if (flag == 0) {
 			m->Llink = n->Rlink;
@@ -312,8 +312,8 @@ void removeNode(Head* H, int input) {
 			free(n);
 		}
 		return;
-	}//¿À¸¥ÂÊ ÀÚ½Ä¸¸ ÀÖÀ» ¶§
-}//»èÁ¦ ¿¬»ê
+	}//ì˜¤ë¥¸ìª½ ìì‹ë§Œ ìˆì„ ë•Œ
+}//ì‚­ì œ ì—°ì‚°
 
 
 int main() {
@@ -325,26 +325,26 @@ int main() {
 	H = createLinkedList();
 	for (;;) {
 		fscanf(in, "%d%c", &input, &c);
-		insertheap(input);//Èü ÀÔ·Â
-		insertNode(H, input);//ÀÌÁøÆ®¸® ÀÔ·Â
+		insertheap(input);//í™ ì…ë ¥
+		insertNode(H, input);//ì´ì§„íŠ¸ë¦¬ ì…ë ¥
 		if (c == '\n')break;
 	}
-	mid(1);//ÃÖ´ëÈü ÁßÀ§¼øÈ¸ Ãâ·Â
+	mid(1);//ìµœëŒ€í™ ì¤‘ìœ„ìˆœíšŒ ì¶œë ¥
 	fprintf(out, "\n");
 	for (;;) {
 		if (heap[1] == NULL)break;
 		removeheap();
-	}//ÃÖ´ëÈü Ãâ·Â
-	//Èü Á¾·á
+	}//ìµœëŒ€í™ ì¶œë ¥
+	//í™ ì¢…ë£Œ
 	fprintf(out, "\n");
-	treemid(H->head);//ÀÌÁøÆ®¸® ÁßÀ§¼øÈ¸ Ãâ·Â
+	treemid(H->head);//ì´ì§„íŠ¸ë¦¬ ì¤‘ìœ„ìˆœíšŒ ì¶œë ¥
 	fprintf(out, "\n");
 	for (;;) {
 		fscanf(in, "%d%c", &input, &c);
 		removeNode(H, input);
 		if (c == '\n')break;
 	}
-	treemid(H->head);//»èÁ¦ ÈÄ ÀÌÁøÆ®¸® ÁßÀ§¼øÈ¸ Ãâ·Â
+	treemid(H->head);//ì‚­ì œ í›„ ì´ì§„íŠ¸ë¦¬ ì¤‘ìœ„ìˆœíšŒ ì¶œë ¥
 	fprintf(out, "\n*");
 	return 0;
 }
